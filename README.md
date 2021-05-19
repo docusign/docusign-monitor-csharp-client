@@ -83,7 +83,7 @@ Log issues against this client through GitHub. We also have an [active developer
 
 ## License
 
-The DocuSign Rooms C# Client is licensed under the [MIT License](https://github.com/docusign/docusign-monitor-csharp-client/blob/master/LICENSE).
+The DocuSign Monitor C# Client is licensed under the [MIT License](https://github.com/docusign/docusign-monitor-csharp-client/blob/master/LICENSE).
 
 
 [nuget-image]: https://img.shields.io/nuget/v/DocuSign.Monitor.svg?style=flat
