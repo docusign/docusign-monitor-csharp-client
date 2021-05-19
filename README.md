@@ -74,7 +74,7 @@ DocuSign provides a sample application code referred to as a [Launcher](https://
 
 For details regarding which type of OAuth grant will work best for your DocuSign integration, see the [REST API Authentication Overview](https://developers.docusign.com/esign-rest-api/guides/authentication) guide located on the [DocuSign Developer Center](https://developers.docusign.com/).
 
-For security purposes, DocuSign recommends using the [Authorization Code Grant](https://developers.docusign.com/esign-rest-api/guides/authentication/oauth2-code-grant) flow.
+The Monitor API can only be used with JWT authentication. 
 
 
 ## Support
