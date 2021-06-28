@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>DocuSign.Monitor</id>
-    <version>1.0.0-beta</version>
+    <version>1.0.0</version>
     <title>DocuSign.Monitor</title>
     <authors>DocuSign</authors>
     <owners>DocuSign</owners>
