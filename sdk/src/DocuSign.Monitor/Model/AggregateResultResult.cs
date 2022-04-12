@@ -25,32 +25,32 @@ using SwaggerDateConverter = DocuSign.Monitor.Client.SwaggerDateConverter;
 namespace DocuSign.Monitor.Model
 {
     /// <summary>
-    /// CursoredResult
+    /// AggregateResultResult
     /// </summary>
     [DataContract]
-    public partial class CursoredResult :  IEquatable<CursoredResult>, IValidatableObject
+    public partial class AggregateResultResult :  IEquatable<AggregateResultResult>, IValidatableObject
     {
-        public CursoredResult()
+        public AggregateResultResult()
         {
             // Empty Constructor
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="CursoredResult" /> class.
+        /// Initializes a new instance of the <see cref="AggregateResultResult" /> class.
         /// </summary>
-        /// <param name="EndCursor">EndCursor.</param>
+        /// <param name="Name">Name.</param>
         /// <param name="Data">Data.</param>
-        public CursoredResult(string EndCursor = default(string), List<Object> Data = default(List<Object>))
+        public AggregateResultResult(string Name = default(string), List<Object> Data = default(List<Object>))
         {
-            this.EndCursor = EndCursor;
+            this.Name = Name;
             this.Data = Data;
         }
         
         /// <summary>
-        /// Gets or Sets EndCursor
+        /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name="endCursor", EmitDefaultValue=false)]
-        public string EndCursor { get; set; }
+        [DataMember(Name="name", EmitDefaultValue=false)]
+        public string Name { get; set; }
         /// <summary>
         /// Gets or Sets Data
         /// </summary>
@@ -63,8 +63,8 @@ namespace DocuSign.Monitor.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class CursoredResult {\n");
-            sb.Append("  EndCursor: ").Append(EndCursor).Append("\n");
+            sb.Append("class AggregateResultResult {\n");
+            sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Data: ").Append(Data).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -87,15 +87,15 @@ namespace DocuSign.Monitor.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as CursoredResult);
+            return this.Equals(obj as AggregateResultResult);
         }
 
         /// <summary>
-        /// Returns true if CursoredResult instances are equal
+        /// Returns true if AggregateResultResult instances are equal
         /// </summary>
-        /// <param name="other">Instance of CursoredResult to be compared</param>
+        /// <param name="other">Instance of AggregateResultResult to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(CursoredResult other)
+        public bool Equals(AggregateResultResult other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
@@ -103,9 +103,9 @@ namespace DocuSign.Monitor.Model
 
             return 
                 (
-                    this.EndCursor == other.EndCursor ||
-                    this.EndCursor != null &&
-                    this.EndCursor.Equals(other.EndCursor)
+                    this.Name == other.Name ||
+                    this.Name != null &&
+                    this.Name.Equals(other.Name)
                 ) && 
                 (
                     this.Data == other.Data ||
@@ -125,8 +125,8 @@ namespace DocuSign.Monitor.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this.EndCursor != null)
-                    hash = hash * 59 + this.EndCursor.GetHashCode();
+                if (this.Name != null)
+                    hash = hash * 59 + this.Name.GetHashCode();
                 if (this.Data != null)
                     hash = hash * 59 + this.Data.GetHashCode();
                 return hash;

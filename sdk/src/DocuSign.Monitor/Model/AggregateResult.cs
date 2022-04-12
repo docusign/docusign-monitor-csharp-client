@@ -25,37 +25,30 @@ using SwaggerDateConverter = DocuSign.Monitor.Client.SwaggerDateConverter;
 namespace DocuSign.Monitor.Model
 {
     /// <summary>
-    /// CursoredResult
+    /// AggregateResult
     /// </summary>
     [DataContract]
-    public partial class CursoredResult :  IEquatable<CursoredResult>, IValidatableObject
+    public partial class AggregateResult :  IEquatable<AggregateResult>, IValidatableObject
     {
-        public CursoredResult()
+        public AggregateResult()
         {
             // Empty Constructor
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="CursoredResult" /> class.
+        /// Initializes a new instance of the <see cref="AggregateResult" /> class.
         /// </summary>
-        /// <param name="EndCursor">EndCursor.</param>
-        /// <param name="Data">Data.</param>
-        public CursoredResult(string EndCursor = default(string), List<Object> Data = default(List<Object>))
+        /// <param name="Result">Result.</param>
+        public AggregateResult(List<AggregateResultResult> Result = default(List<AggregateResultResult>))
         {
-            this.EndCursor = EndCursor;
-            this.Data = Data;
+            this.Result = Result;
         }
         
         /// <summary>
-        /// Gets or Sets EndCursor
+        /// Gets or Sets Result
         /// </summary>
-        [DataMember(Name="endCursor", EmitDefaultValue=false)]
-        public string EndCursor { get; set; }
-        /// <summary>
-        /// Gets or Sets Data
-        /// </summary>
-        [DataMember(Name="data", EmitDefaultValue=false)]
-        public List<Object> Data { get; set; }
+        [DataMember(Name="result", EmitDefaultValue=false)]
+        public List<AggregateResultResult> Result { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -63,9 +56,8 @@ namespace DocuSign.Monitor.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class CursoredResult {\n");
-            sb.Append("  EndCursor: ").Append(EndCursor).Append("\n");
-            sb.Append("  Data: ").Append(Data).Append("\n");
+            sb.Append("class AggregateResult {\n");
+            sb.Append("  Result: ").Append(Result).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -87,15 +79,15 @@ namespace DocuSign.Monitor.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as CursoredResult);
+            return this.Equals(obj as AggregateResult);
         }
 
         /// <summary>
-        /// Returns true if CursoredResult instances are equal
+        /// Returns true if AggregateResult instances are equal
         /// </summary>
-        /// <param name="other">Instance of CursoredResult to be compared</param>
+        /// <param name="other">Instance of AggregateResult to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(CursoredResult other)
+        public bool Equals(AggregateResult other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
@@ -103,14 +95,9 @@ namespace DocuSign.Monitor.Model
 
             return 
                 (
-                    this.EndCursor == other.EndCursor ||
-                    this.EndCursor != null &&
-                    this.EndCursor.Equals(other.EndCursor)
-                ) && 
-                (
-                    this.Data == other.Data ||
-                    this.Data != null &&
-                    this.Data.SequenceEqual(other.Data)
+                    this.Result == other.Result ||
+                    this.Result != null &&
+                    this.Result.SequenceEqual(other.Result)
                 );
         }
 
@@ -125,10 +112,8 @@ namespace DocuSign.Monitor.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this.EndCursor != null)
-                    hash = hash * 59 + this.EndCursor.GetHashCode();
-                if (this.Data != null)
-                    hash = hash * 59 + this.Data.GetHashCode();
+                if (this.Result != null)
+                    hash = hash * 59 + this.Result.GetHashCode();
                 return hash;
             }
         }

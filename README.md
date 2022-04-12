@@ -74,7 +74,7 @@ DocuSign provides a sample application code referred to as a [Launcher](https://
 
 For details regarding which type of OAuth grant will work best for your DocuSign integration, see the [REST API Authentication Overview](https://developers.docusign.com/esign-rest-api/guides/authentication) guide located on the [DocuSign Developer Center](https://developers.docusign.com/).
 
-The Monitor API can only be used with JWT authentication. 
+For security purposes, DocuSign recommends using the [Authorization Code Grant](https://developers.docusign.com/esign-rest-api/guides/authentication/oauth2-code-grant) flow.
 
 
 ## Support
@@ -83,7 +83,7 @@ Log issues against this client through GitHub. We also have an [active developer
 
 ## License
 
-The DocuSign Monitor C# Client is licensed under the [MIT License](https://github.com/docusign/docusign-monitor-csharp-client/blob/master/LICENSE).
+The DocuSign Rooms C# Client is licensed under the [MIT License](https://github.com/docusign/docusign-monitor-csharp-client/blob/master/LICENSE).
 
 
 [nuget-image]: https://img.shields.io/nuget/v/DocuSign.Monitor.svg?style=flat

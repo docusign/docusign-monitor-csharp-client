@@ -1,5 +1,5 @@
 /* 
- * DocuSign Monitor API - v2
+ * Monitor API
  *
  * An API for an integrator to access the features of DocuSign Monitor
  *
