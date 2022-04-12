@@ -1,5 +1,5 @@
 /* 
- * DocuSign Monitor API - v2
+ * Monitor API
  *
  * An API for an integrator to access the features of DocuSign Monitor
  *
@@ -49,6 +49,31 @@ namespace DocuSign.Monitor.Api
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
         ApiResponse<CursoredResult> GetStreamWithHttpInfo (string version, string dataSetName, DataSetApi.GetStreamOptions options = null);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Allows for querying existing data using filter and aggregation clauses  Required scopes: impersonation
+        /// </remarks>
+        /// <exception cref="DocuSign.Monitor.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="version">The requested API version</param>/// <param name="dataSetName">The name of the dataset to query</param>
+        /// <param name="webQuery">A collection of filter clauses and aggregations scoped to one or more organizations. The fields queryScope and queryScopeId may be omitted defaulting to all applicable organizations</param>
+        
+        /// <returns></returns>
+        AggregateResult PostWebQuery (string version, string dataSetName, WebQuery webQuery);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Allows for querying existing data using filter and aggregation clauses  Required scopes: impersonation
+        /// </remarks>
+        /// <exception cref="DocuSign.Monitor.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="version">The requested API version</param>/// <param name="dataSetName">The name of the dataset to query</param>
+        /// <param name="webQuery">A collection of filter clauses and aggregations scoped to one or more organizations. The fields queryScope and queryScopeId may be omitted defaulting to all applicable organizations</param>
+        
+        /// <returns>ApiResponse of </returns>
+        ApiResponse<AggregateResult> PostWebQueryWithHttpInfo (string version, string dataSetName, WebQuery webQuery);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -76,6 +101,31 @@ namespace DocuSign.Monitor.Api
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (CursoredResult)</returns>
         System.Threading.Tasks.Task<ApiResponse<CursoredResult>> GetStreamAsyncWithHttpInfo (string version, string dataSetName, DataSetApi.GetStreamOptions options = null);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Allows for querying existing data using filter and aggregation clauses  Required scopes: impersonation
+        /// </remarks>
+        /// <exception cref="DocuSign.Monitor.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="version">The requested API version</param>/// <param name="dataSetName">The name of the dataset to query</param>
+        /// <param name="webQuery">A collection of filter clauses and aggregations scoped to one or more organizations. The fields queryScope and queryScopeId may be omitted defaulting to all applicable organizations</param>
+        
+        /// <returns>Task of AggregateResult</returns>
+        System.Threading.Tasks.Task<AggregateResult> PostWebQueryAsync (string version, string dataSetName, WebQuery webQuery);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Allows for querying existing data using filter and aggregation clauses  Required scopes: impersonation
+        /// </remarks>
+        /// <exception cref="DocuSign.Monitor.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="version">The requested API version</param>/// <param name="dataSetName">The name of the dataset to query</param>
+        /// <param name="webQuery">A collection of filter clauses and aggregations scoped to one or more organizations. The fields queryScope and queryScopeId may be omitted defaulting to all applicable organizations</param>
+        
+        /// <returns>Task of ApiResponse (AggregateResult)</returns>
+        System.Threading.Tasks.Task<ApiResponse<AggregateResult>> PostWebQueryAsyncWithHttpInfo (string version, string dataSetName, WebQuery webQuery);
         #endregion Asynchronous Operations
     }
 
@@ -319,6 +369,200 @@ namespace DocuSign.Monitor.Api
             return new ApiResponse<CursoredResult>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (CursoredResult) this.ApiClient.Deserialize(localVarResponse, typeof(CursoredResult)));
+            
+        }
+
+
+
+        /// <summary>
+        ///  Allows for querying existing data using filter and aggregation clauses  Required scopes: impersonation
+        /// </summary>
+        /// <exception cref="DocuSign.Monitor.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="version">The requested API version</param>/// <param name="dataSetName">The name of the dataset to query</param>
+        /// <param name="webQuery">A collection of filter clauses and aggregations scoped to one or more organizations. The fields queryScope and queryScopeId may be omitted defaulting to all applicable organizations</param>
+        
+        /// <returns>AggregateResult</returns>
+        public AggregateResult PostWebQuery (string version, string dataSetName, WebQuery webQuery)
+        {
+             ApiResponse<AggregateResult> localVarResponse = PostWebQueryWithHttpInfo(version, dataSetName, webQuery);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  Allows for querying existing data using filter and aggregation clauses  Required scopes: impersonation
+        /// </summary>
+        /// <exception cref="DocuSign.Monitor.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="version">The requested API version</param>/// <param name="dataSetName">The name of the dataset to query</param>
+        /// <param name="webQuery">A collection of filter clauses and aggregations scoped to one or more organizations. The fields queryScope and queryScopeId may be omitted defaulting to all applicable organizations</param>
+        
+        /// <returns>ApiResponse of AggregateResult</returns>
+        public ApiResponse< AggregateResult > PostWebQueryWithHttpInfo (string version, string dataSetName, WebQuery webQuery)
+        {
+            // verify the required parameter 'version' is set
+            if (version == null)
+                throw new ApiException(400, "Missing required parameter 'version' when calling DataSetApi->PostWebQuery");
+            // verify the required parameter 'dataSetName' is set
+            if (dataSetName == null)
+                throw new ApiException(400, "Missing required parameter 'dataSetName' when calling DataSetApi->PostWebQuery");
+            // verify the required parameter 'webQuery' is set
+            if (webQuery == null)
+                throw new ApiException(400, "Missing required parameter 'webQuery' when calling DataSetApi->PostWebQuery");
+
+            var localVarPath = "/api/v{version}/datasets/{dataSetName}/web_query";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (version != null) localVarPathParams.Add("version", this.ApiClient.ParameterToString(version)); // path parameter
+            if (dataSetName != null) localVarPathParams.Add("dataSetName", this.ApiClient.ParameterToString(dataSetName)); // path parameter
+
+
+            if (webQuery != null && webQuery.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.ApiClient.Serialize(webQuery); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = webQuery; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("PostWebQuery", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            
+            // DocuSign: Handle for PDF return types
+            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
+            {
+                return new ApiResponse<AggregateResult>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (AggregateResult) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(AggregateResult)));
+            }
+            else
+            {
+                return new ApiResponse<AggregateResult>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (AggregateResult) this.ApiClient.Deserialize(localVarResponse, typeof(AggregateResult)));
+            }
+            
+        }
+
+        /// <summary>
+        ///  Allows for querying existing data using filter and aggregation clauses  Required scopes: impersonation
+        /// </summary>
+        /// <exception cref="DocuSign.Monitor.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="version">The requested API version</param>/// <param name="dataSetName">The name of the dataset to query</param>
+        /// <param name="webQuery">A collection of filter clauses and aggregations scoped to one or more organizations. The fields queryScope and queryScopeId may be omitted defaulting to all applicable organizations</param>
+        
+        /// <returns>Task of AggregateResult</returns>
+        public async System.Threading.Tasks.Task<AggregateResult> PostWebQueryAsync (string version, string dataSetName, WebQuery webQuery)
+        {
+             ApiResponse<AggregateResult> localVarResponse = await PostWebQueryAsyncWithHttpInfo(version, dataSetName, webQuery);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        ///  Allows for querying existing data using filter and aggregation clauses  Required scopes: impersonation
+        /// </summary>
+        /// <exception cref="DocuSign.Monitor.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="version">The requested API version</param>/// <param name="dataSetName">The name of the dataset to query</param>
+        /// <param name="webQuery">A collection of filter clauses and aggregations scoped to one or more organizations. The fields queryScope and queryScopeId may be omitted defaulting to all applicable organizations</param>
+        
+        /// <returns>Task of ApiResponse (AggregateResult)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<AggregateResult>> PostWebQueryAsyncWithHttpInfo (string version, string dataSetName, WebQuery webQuery)
+        {
+            // verify the required parameter 'version' is set
+            if (version == null)
+                throw new ApiException(400, "Missing required parameter 'version' when calling DataSetApi->PostWebQuery");
+            // verify the required parameter 'dataSetName' is set
+            if (dataSetName == null)
+                throw new ApiException(400, "Missing required parameter 'dataSetName' when calling DataSetApi->PostWebQuery");
+            // verify the required parameter 'webQuery' is set
+            if (webQuery == null)
+                throw new ApiException(400, "Missing required parameter 'webQuery' when calling DataSetApi->PostWebQuery");
+
+            var localVarPath = "/api/v{version}/datasets/{dataSetName}/web_query";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (version != null) localVarPathParams.Add("version", this.ApiClient.ParameterToString(version)); // path parameter
+            if (dataSetName != null) localVarPathParams.Add("dataSetName", this.ApiClient.ParameterToString(dataSetName)); // path parameter
+
+
+            if (webQuery != null && webQuery.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.ApiClient.Serialize(webQuery); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = webQuery; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("PostWebQuery", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<AggregateResult>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (AggregateResult) this.ApiClient.Deserialize(localVarResponse, typeof(AggregateResult)));
             
         }
 

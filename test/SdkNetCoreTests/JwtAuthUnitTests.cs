@@ -30,9 +30,12 @@ namespace SdkNetCoreTests
             scopes.Add("impersonation");
 
             OAuth.OAuthToken tokenInfo = testConfig.ApiClient.RequestJWTUserToken(testConfig.IntegratorKey, testConfig.UserId, testConfig.OAuthBasePath, privateKeyStream, testConfig.ExpiresInHours, scopes);
+            Assert.IsNotNull(tokenInfo);
 
             // the authentication api uses the apiClient (and X-DocuSign-Authentication header) that are set in Configuration object
-            OAuth.UserInfo userInfo = testConfig.ApiClient.GetUserInfo(tokenInfo.access_token);
+            // for testing purposes, we have to connect using a different host than we do for authentication and other monitor tests
+            ApiClient userInfoApiClient = new ApiClient(testConfig.UserInfoHost);
+            OAuth.UserInfo userInfo = userInfoApiClient.GetUserInfo(tokenInfo.access_token);
 
             Assert.IsNotNull(userInfo);
             Assert.IsNotNull(userInfo.Accounts);

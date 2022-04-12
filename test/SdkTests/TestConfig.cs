@@ -1,30 +1,41 @@
 using DocuSign.Monitor.Client;
 using System;
-using System.Collections.Generic;
 
 namespace SdkTests
 {
     class TestConfig
     {
         public string IntegratorKey { get; set; }
+
         public string Host { get; set; }
+
+        public string UserInfoHost { get; set; }
+
         public ApiClient ApiClient { get; set; }
-        //public Configuration Configuration { get; set; }
+
         public string AccountId { get; set; }
+
         public string RecipientEmail { get; set; }
+
         public string RecipientName { get; set; }
+
         public string ReturnUrl { get; set; }
+
         public string UserId { get; set; }
+
         public string OAuthBasePath { get; set; }
+
         public string PrivateKey { get; set; }
+
         public int ExpiresInHours { get; set; }
 
-        public TestConfig(string integratorKey = null, string host = null, string recipientEmail = null, string recipientName = null, string returnUrl = null)
+        public TestConfig(string integratorKey = null, string host = null, string recipientEmail = null, string recipientName = null, string returnUrl = null, string userInfoHost = null)
         {
             string userIdFromEnv = Environment.GetEnvironmentVariable("userid");
             string integratorKeyFromEnv = Environment.GetEnvironmentVariable("integratorkey");
 
-            this.Host = (host != null) ? host : "https://lens-d.docusign.net";
+            this.Host = host ?? "https://lens-d.docusign.net";
+            this.UserInfoHost = userInfoHost ?? "https://demo.docusign.net";
             this.IntegratorKey = (integratorKey != null) ? integratorKey : integratorKeyFromEnv;
 
             this.RecipientEmail = (recipientEmail != null) ? recipientEmail : "docusignsdktest@mailinator.com";
