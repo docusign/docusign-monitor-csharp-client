@@ -10,9 +10,8 @@
 
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp;
+using System.Net.Http;
 using DocuSign.Monitor.Client;
 using DocuSign.Monitor.Model;
 
@@ -31,11 +30,11 @@ namespace DocuSign.Monitor.Api
         /// Allows for the streaming of data as it becomes available  Required scopes: impersonation
         /// </remarks>
         /// <exception cref="DocuSign.Monitor.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="version">The requested API version</param>/// <param name="dataSetName">The name of the dataset to stream</param>
-        
+        /// <param name="version">The requested API version</param>
+        /// <param name="dataSetName">The name of the dataset to stream</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
-        CursoredResult GetStream (string version, string dataSetName, DataSetApi.GetStreamOptions options = null);
+        CursoredResult GetStream(string version, string dataSetName, DataSetApi.GetStreamOptions options = null);
 
         /// <summary>
         /// 
@@ -44,11 +43,11 @@ namespace DocuSign.Monitor.Api
         /// Allows for the streaming of data as it becomes available  Required scopes: impersonation
         /// </remarks>
         /// <exception cref="DocuSign.Monitor.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="version">The requested API version</param>/// <param name="dataSetName">The name of the dataset to stream</param>
-        
+        /// <param name="version">The requested API version</param>
+        /// <param name="dataSetName">The name of the dataset to stream</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<CursoredResult> GetStreamWithHttpInfo (string version, string dataSetName, DataSetApi.GetStreamOptions options = null);
+        ApiResponse<CursoredResult> GetStreamWithHttpInfo(string version, string dataSetName, DataSetApi.GetStreamOptions options = null);
         /// <summary>
         /// 
         /// </summary>
@@ -56,11 +55,11 @@ namespace DocuSign.Monitor.Api
         /// Allows for querying existing data using filter and aggregation clauses  Required scopes: impersonation
         /// </remarks>
         /// <exception cref="DocuSign.Monitor.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="version">The requested API version</param>/// <param name="dataSetName">The name of the dataset to query</param>
+        /// <param name="version">The requested API version</param>
+        /// <param name="dataSetName">The name of the dataset to query</param>
         /// <param name="webQuery">A collection of filter clauses and aggregations scoped to one or more organizations. The fields queryScope and queryScopeId may be omitted defaulting to all applicable organizations</param>
-        
         /// <returns></returns>
-        AggregateResult PostWebQuery (string version, string dataSetName, WebQuery webQuery);
+        AggregateResult PostWebQuery(string version, string dataSetName, WebQuery webQuery);
 
         /// <summary>
         /// 
@@ -69,11 +68,11 @@ namespace DocuSign.Monitor.Api
         /// Allows for querying existing data using filter and aggregation clauses  Required scopes: impersonation
         /// </remarks>
         /// <exception cref="DocuSign.Monitor.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="version">The requested API version</param>/// <param name="dataSetName">The name of the dataset to query</param>
+        /// <param name="version">The requested API version</param>
+        /// <param name="dataSetName">The name of the dataset to query</param>
         /// <param name="webQuery">A collection of filter clauses and aggregations scoped to one or more organizations. The fields queryScope and queryScopeId may be omitted defaulting to all applicable organizations</param>
-        
         /// <returns>ApiResponse of </returns>
-        ApiResponse<AggregateResult> PostWebQueryWithHttpInfo (string version, string dataSetName, WebQuery webQuery);
+        ApiResponse<AggregateResult> PostWebQueryWithHttpInfo(string version, string dataSetName, WebQuery webQuery);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -83,11 +82,11 @@ namespace DocuSign.Monitor.Api
         /// Allows for the streaming of data as it becomes available  Required scopes: impersonation
         /// </remarks>
         /// <exception cref="DocuSign.Monitor.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="version">The requested API version</param>/// <param name="dataSetName">The name of the dataset to stream</param>
-        
+        /// <param name="version">The requested API version</param>
+        /// <param name="dataSetName">The name of the dataset to stream</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of CursoredResult</returns>
-        System.Threading.Tasks.Task<CursoredResult> GetStreamAsync (string version, string dataSetName, DataSetApi.GetStreamOptions options = null);
+        System.Threading.Tasks.Task<CursoredResult> GetStreamAsync(string version, string dataSetName, DataSetApi.GetStreamOptions options = null);
 
         /// <summary>
         /// 
@@ -96,11 +95,11 @@ namespace DocuSign.Monitor.Api
         /// Allows for the streaming of data as it becomes available  Required scopes: impersonation
         /// </remarks>
         /// <exception cref="DocuSign.Monitor.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="version">The requested API version</param>/// <param name="dataSetName">The name of the dataset to stream</param>
-        
+        /// <param name="version">The requested API version</param>
+        /// <param name="dataSetName">The name of the dataset to stream</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (CursoredResult)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CursoredResult>> GetStreamAsyncWithHttpInfo (string version, string dataSetName, DataSetApi.GetStreamOptions options = null);
+        System.Threading.Tasks.Task<ApiResponse<CursoredResult>> GetStreamAsyncWithHttpInfo(string version, string dataSetName, DataSetApi.GetStreamOptions options = null);
         /// <summary>
         /// 
         /// </summary>
@@ -108,11 +107,11 @@ namespace DocuSign.Monitor.Api
         /// Allows for querying existing data using filter and aggregation clauses  Required scopes: impersonation
         /// </remarks>
         /// <exception cref="DocuSign.Monitor.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="version">The requested API version</param>/// <param name="dataSetName">The name of the dataset to query</param>
+        /// <param name="version">The requested API version</param>
+        /// <param name="dataSetName">The name of the dataset to query</param>
         /// <param name="webQuery">A collection of filter clauses and aggregations scoped to one or more organizations. The fields queryScope and queryScopeId may be omitted defaulting to all applicable organizations</param>
-        
         /// <returns>Task of AggregateResult</returns>
-        System.Threading.Tasks.Task<AggregateResult> PostWebQueryAsync (string version, string dataSetName, WebQuery webQuery);
+        System.Threading.Tasks.Task<AggregateResult> PostWebQueryAsync(string version, string dataSetName, WebQuery webQuery);
 
         /// <summary>
         /// 
@@ -121,11 +120,11 @@ namespace DocuSign.Monitor.Api
         /// Allows for querying existing data using filter and aggregation clauses  Required scopes: impersonation
         /// </remarks>
         /// <exception cref="DocuSign.Monitor.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="version">The requested API version</param>/// <param name="dataSetName">The name of the dataset to query</param>
+        /// <param name="version">The requested API version</param>
+        /// <param name="dataSetName">The name of the dataset to query</param>
         /// <param name="webQuery">A collection of filter clauses and aggregations scoped to one or more organizations. The fields queryScope and queryScopeId may be omitted defaulting to all applicable organizations</param>
-        
         /// <returns>Task of ApiResponse (AggregateResult)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AggregateResult>> PostWebQueryAsyncWithHttpInfo (string version, string dataSetName, WebQuery webQuery);
+        System.Threading.Tasks.Task<ApiResponse<AggregateResult>> PostWebQueryAsyncWithHttpInfo(string version, string dataSetName, WebQuery webQuery);
         #endregion Asynchronous Operations
     }
 
@@ -142,7 +141,7 @@ namespace DocuSign.Monitor.Api
         /// </summary>
         /// <param name="aplClient">An instance of AplClient</param>
         /// <returns></returns>
-        public DataSetApi(ApiClient aplClient)
+        public DataSetApi(DocuSignClient aplClient)
         {
             this.ApiClient = aplClient;
 
@@ -155,14 +154,14 @@ namespace DocuSign.Monitor.Api
         /// <value>The base path</value>
         public String GetBasePath()
         {
-            return this.ApiClient.RestClient.BaseUrl.ToString();
+            return this.ApiClient.GetBasePath();
         }
 
         /// <summary>
         /// Gets or sets the ApiClient object
         /// </summary>
         /// <value>An instance of the ApiClient</value>
-        public ApiClient ApiClient { get; set; }
+        public DocuSignClient ApiClient { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -180,7 +179,6 @@ namespace DocuSign.Monitor.Api
             set { _exceptionFactory = value; }
         }
 
-
         /// <summary>
         ///  Allows for the streaming of data as it becomes available  Required scopes: impersonation
         /// </summary>
@@ -196,11 +194,11 @@ namespace DocuSign.Monitor.Api
         ///  Allows for the streaming of data as it becomes available  Required scopes: impersonation
         /// </summary>
         /// <exception cref="DocuSign.Monitor.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="version">The requested API version</param>/// <param name="dataSetName">The name of the dataset to stream</param>
-        
+        /// <param name="version">The requested API version</param>
+        /// <param name="dataSetName">The name of the dataset to stream</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>CursoredResult</returns>
-        public CursoredResult GetStream (string version, string dataSetName, DataSetApi.GetStreamOptions options = null)
+        public CursoredResult GetStream(string version, string dataSetName, DataSetApi.GetStreamOptions options = null)
         {
              ApiResponse<CursoredResult> localVarResponse = GetStreamWithHttpInfo(version, dataSetName, options);
              return localVarResponse.Data;
@@ -210,11 +208,11 @@ namespace DocuSign.Monitor.Api
         ///  Allows for the streaming of data as it becomes available  Required scopes: impersonation
         /// </summary>
         /// <exception cref="DocuSign.Monitor.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="version">The requested API version</param>/// <param name="dataSetName">The name of the dataset to stream</param>
-        
+        /// <param name="version">The requested API version</param>
+        /// <param name="dataSetName">The name of the dataset to stream</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of CursoredResult</returns>
-        public ApiResponse< CursoredResult > GetStreamWithHttpInfo (string version, string dataSetName, DataSetApi.GetStreamOptions options = null)
+        public ApiResponse<CursoredResult> GetStreamWithHttpInfo(string version, string dataSetName, DataSetApi.GetStreamOptions options = null)
         {
             // verify the required parameter 'version' is set
             if (version == null)
@@ -228,8 +226,9 @@ namespace DocuSign.Monitor.Api
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
+            var localVarFileParams = new List<FileParameter>();
             Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
@@ -250,7 +249,6 @@ namespace DocuSign.Monitor.Api
             localVarPathParams.Add("format", "json");
             if (version != null) localVarPathParams.Add("version", this.ApiClient.ParameterToString(version)); // path parameter
             if (dataSetName != null) localVarPathParams.Add("dataSetName", this.ApiClient.ParameterToString(dataSetName)); // path parameter
-
             if (options != null)
             {
                 if (options.cursor != null) localVarQueryParams.Add("cursor", this.ApiClient.ParameterToString(options.cursor)); // query parameter
@@ -260,11 +258,10 @@ namespace DocuSign.Monitor.Api
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -272,43 +269,34 @@ namespace DocuSign.Monitor.Api
                 if (exception != null) throw exception;
             }
 
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<CursoredResult>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (CursoredResult) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(CursoredResult)));
-            }
-            else
-            {
-                return new ApiResponse<CursoredResult>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (CursoredResult) this.ApiClient.Deserialize(localVarResponse, typeof(CursoredResult)));
-            }
-            
+            return new ApiResponse<CursoredResult>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (CursoredResult)this.ApiClient.Deserialize(localVarResponse, typeof(CursoredResult)));
         }
 
         /// <summary>
         ///  Allows for the streaming of data as it becomes available  Required scopes: impersonation
         /// </summary>
         /// <exception cref="DocuSign.Monitor.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="version">The requested API version</param>/// <param name="dataSetName">The name of the dataset to stream</param>
-        
+        /// <param name="version">The requested API version</param>
+        /// <param name="dataSetName">The name of the dataset to stream</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of CursoredResult</returns>
-        public async System.Threading.Tasks.Task<CursoredResult> GetStreamAsync (string version, string dataSetName, DataSetApi.GetStreamOptions options = null)
+        public async System.Threading.Tasks.Task<CursoredResult> GetStreamAsync(string version, string dataSetName, DataSetApi.GetStreamOptions options = null)
         {
              ApiResponse<CursoredResult> localVarResponse = await GetStreamAsyncWithHttpInfo(version, dataSetName, options);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         ///  Allows for the streaming of data as it becomes available  Required scopes: impersonation
         /// </summary>
         /// <exception cref="DocuSign.Monitor.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="version">The requested API version</param>/// <param name="dataSetName">The name of the dataset to stream</param>
-        
+        /// <param name="version">The requested API version</param>
+        /// <param name="dataSetName">The name of the dataset to stream</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (CursoredResult)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<CursoredResult>> GetStreamAsyncWithHttpInfo (string version, string dataSetName, DataSetApi.GetStreamOptions options = null)
+        public async System.Threading.Tasks.Task<ApiResponse<CursoredResult>> GetStreamAsyncWithHttpInfo(string version, string dataSetName, DataSetApi.GetStreamOptions options = null)
         {
             // verify the required parameter 'version' is set
             if (version == null)
@@ -322,8 +310,9 @@ namespace DocuSign.Monitor.Api
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
+            var localVarFileParams = new List<FileParameter>();
             Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
@@ -344,7 +333,6 @@ namespace DocuSign.Monitor.Api
             localVarPathParams.Add("format", "json");
             if (version != null) localVarPathParams.Add("version", this.ApiClient.ParameterToString(version)); // path parameter
             if (dataSetName != null) localVarPathParams.Add("dataSetName", this.ApiClient.ParameterToString(dataSetName)); // path parameter
-
             if (options != null)
             {
                 if (options.cursor != null) localVarQueryParams.Add("cursor", this.ApiClient.ParameterToString(options.cursor)); // query parameter
@@ -354,11 +342,10 @@ namespace DocuSign.Monitor.Api
 
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Get, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -366,23 +353,21 @@ namespace DocuSign.Monitor.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<CursoredResult>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (CursoredResult) this.ApiClient.Deserialize(localVarResponse, typeof(CursoredResult)));
-            
+            return new ApiResponse<CursoredResult>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (CursoredResult)this.ApiClient.Deserialize(localVarResponse, typeof(CursoredResult)));
         }
-
 
 
         /// <summary>
         ///  Allows for querying existing data using filter and aggregation clauses  Required scopes: impersonation
         /// </summary>
         /// <exception cref="DocuSign.Monitor.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="version">The requested API version</param>/// <param name="dataSetName">The name of the dataset to query</param>
+        /// <param name="version">The requested API version</param>
+        /// <param name="dataSetName">The name of the dataset to query</param>
         /// <param name="webQuery">A collection of filter clauses and aggregations scoped to one or more organizations. The fields queryScope and queryScopeId may be omitted defaulting to all applicable organizations</param>
-        
         /// <returns>AggregateResult</returns>
-        public AggregateResult PostWebQuery (string version, string dataSetName, WebQuery webQuery)
+        public AggregateResult PostWebQuery(string version, string dataSetName, WebQuery webQuery)
         {
              ApiResponse<AggregateResult> localVarResponse = PostWebQueryWithHttpInfo(version, dataSetName, webQuery);
              return localVarResponse.Data;
@@ -392,11 +377,11 @@ namespace DocuSign.Monitor.Api
         ///  Allows for querying existing data using filter and aggregation clauses  Required scopes: impersonation
         /// </summary>
         /// <exception cref="DocuSign.Monitor.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="version">The requested API version</param>/// <param name="dataSetName">The name of the dataset to query</param>
+        /// <param name="version">The requested API version</param>
+        /// <param name="dataSetName">The name of the dataset to query</param>
         /// <param name="webQuery">A collection of filter clauses and aggregations scoped to one or more organizations. The fields queryScope and queryScopeId may be omitted defaulting to all applicable organizations</param>
-        
         /// <returns>ApiResponse of AggregateResult</returns>
-        public ApiResponse< AggregateResult > PostWebQueryWithHttpInfo (string version, string dataSetName, WebQuery webQuery)
+        public ApiResponse<AggregateResult> PostWebQueryWithHttpInfo(string version, string dataSetName, WebQuery webQuery)
         {
             // verify the required parameter 'version' is set
             if (version == null)
@@ -413,8 +398,9 @@ namespace DocuSign.Monitor.Api
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
+            var localVarFileParams = new List<FileParameter>();
             Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
@@ -435,8 +421,6 @@ namespace DocuSign.Monitor.Api
             localVarPathParams.Add("format", "json");
             if (version != null) localVarPathParams.Add("version", this.ApiClient.ParameterToString(version)); // path parameter
             if (dataSetName != null) localVarPathParams.Add("dataSetName", this.ApiClient.ParameterToString(dataSetName)); // path parameter
-
-
             if (webQuery != null && webQuery.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(webQuery); // http body (model) parameter
@@ -447,12 +431,12 @@ namespace DocuSign.Monitor.Api
             }
 
 
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.ApiClient.CallApi(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -460,43 +444,34 @@ namespace DocuSign.Monitor.Api
                 if (exception != null) throw exception;
             }
 
-            
-            // DocuSign: Handle for PDF return types
-            if (localVarResponse.ContentType != null && !localVarResponse.ContentType.ToLower().Contains("json"))
-            {
-                return new ApiResponse<AggregateResult>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (AggregateResult) this.ApiClient.Deserialize(localVarResponse.RawBytes, typeof(AggregateResult)));
-            }
-            else
-            {
-                return new ApiResponse<AggregateResult>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()), (AggregateResult) this.ApiClient.Deserialize(localVarResponse, typeof(AggregateResult)));
-            }
-            
+            return new ApiResponse<AggregateResult>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (AggregateResult)this.ApiClient.Deserialize(localVarResponse, typeof(AggregateResult)));
         }
 
         /// <summary>
         ///  Allows for querying existing data using filter and aggregation clauses  Required scopes: impersonation
         /// </summary>
         /// <exception cref="DocuSign.Monitor.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="version">The requested API version</param>/// <param name="dataSetName">The name of the dataset to query</param>
+        /// <param name="version">The requested API version</param>
+        /// <param name="dataSetName">The name of the dataset to query</param>
         /// <param name="webQuery">A collection of filter clauses and aggregations scoped to one or more organizations. The fields queryScope and queryScopeId may be omitted defaulting to all applicable organizations</param>
-        
         /// <returns>Task of AggregateResult</returns>
-        public async System.Threading.Tasks.Task<AggregateResult> PostWebQueryAsync (string version, string dataSetName, WebQuery webQuery)
+        public async System.Threading.Tasks.Task<AggregateResult> PostWebQueryAsync(string version, string dataSetName, WebQuery webQuery)
         {
              ApiResponse<AggregateResult> localVarResponse = await PostWebQueryAsyncWithHttpInfo(version, dataSetName, webQuery);
              return localVarResponse.Data;
-
         }
 
         /// <summary>
         ///  Allows for querying existing data using filter and aggregation clauses  Required scopes: impersonation
         /// </summary>
         /// <exception cref="DocuSign.Monitor.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="version">The requested API version</param>/// <param name="dataSetName">The name of the dataset to query</param>
+        /// <param name="version">The requested API version</param>
+        /// <param name="dataSetName">The name of the dataset to query</param>
         /// <param name="webQuery">A collection of filter clauses and aggregations scoped to one or more organizations. The fields queryScope and queryScopeId may be omitted defaulting to all applicable organizations</param>
-        
         /// <returns>Task of ApiResponse (AggregateResult)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<AggregateResult>> PostWebQueryAsyncWithHttpInfo (string version, string dataSetName, WebQuery webQuery)
+        public async System.Threading.Tasks.Task<ApiResponse<AggregateResult>> PostWebQueryAsyncWithHttpInfo(string version, string dataSetName, WebQuery webQuery)
         {
             // verify the required parameter 'version' is set
             if (version == null)
@@ -513,8 +488,9 @@ namespace DocuSign.Monitor.Api
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
+            var localVarFileParams = new List<FileParameter>();
             Object localVarPostBody = null;
+            String localVarHttpContentDisposition = string.Empty;
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
@@ -535,8 +511,6 @@ namespace DocuSign.Monitor.Api
             localVarPathParams.Add("format", "json");
             if (version != null) localVarPathParams.Add("version", this.ApiClient.ParameterToString(version)); // path parameter
             if (dataSetName != null) localVarPathParams.Add("dataSetName", this.ApiClient.ParameterToString(dataSetName)); // path parameter
-
-
             if (webQuery != null && webQuery.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(webQuery); // http body (model) parameter
@@ -547,12 +521,12 @@ namespace DocuSign.Monitor.Api
             }
 
 
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.ApiClient.CallApiAsync(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+            // make the HTTP request
+            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, HttpMethod.Post, localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
+            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
+
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
@@ -560,10 +534,9 @@ namespace DocuSign.Monitor.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<AggregateResult>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (AggregateResult) this.ApiClient.Deserialize(localVarResponse, typeof(AggregateResult)));
-            
+            return new ApiResponse<AggregateResult>(localVarStatusCode, 
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
+                (AggregateResult)this.ApiClient.Deserialize(localVarResponse, typeof(AggregateResult)));
         }
 
     }
