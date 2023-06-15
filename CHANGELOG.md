@@ -1,3 +1,8 @@
+## [v1.2.0] - Monitor API v2.0-2.0.0 - 2023-06-14
+### Changed
+- Added support for version v2.0-2.0.0 of the DocuSign Monitor API.
+- Updated the SDK release version.
+
 ## [v1.1.1] - Monitor API v2.0-1.1.0 - 2023-05-10
 ### Changed
 - Removed support for .NET Framework 4.5.2. Miminum requirement is now .NET Framework 4.6.2
