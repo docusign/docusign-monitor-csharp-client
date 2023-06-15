@@ -16,7 +16,7 @@
     <RootNamespace>DocuSign.Monitor</RootNamespace>
     <AssemblyName>DocuSign.Monitor</AssemblyName>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <VersionPrefix>1.1.1</VersionPrefix>
+    <VersionPrefix>1.2.0</VersionPrefix>
     <VersionSuffix/>
     <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -26,7 +26,7 @@
     <PackageLicenseUrl>https://github.com/docusign/docusign-csharp-client/blob/master/LICENSE</PackageLicenseUrl>
     <RepositoryUrl>https://github.com/docusign/docusign-csharp-client</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageReleaseNotes>[v1.1.1] - Monitor API v2.0-1.1.0 - 5/10/2023</PackageReleaseNotes>
+    <PackageReleaseNotes>[v1.2.0] - Monitor API v2.0-2.0.0 - 6/14/2023</PackageReleaseNotes>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(TargetFramework)' == 'net462'">
     <DefineConstants>NET462</DefineConstants>
