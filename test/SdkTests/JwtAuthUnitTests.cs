@@ -17,7 +17,8 @@ namespace SdkTests
         [TestMethod]
         public void JwtLoginTest()
         {
-            testConfig.ApiClient = new ApiClient(testConfig.Host);
+            testConfig.ApiClient = new DocuSignClient(testConfig.Host);
+            testConfig.ApiClient.SetOAuthBasePath(testConfig.OAuthBasePath);
 
             Assert.IsNotNull(testConfig.PrivateKey);
 
@@ -34,7 +35,8 @@ namespace SdkTests
 
             // the authentication api uses the apiClient (and X-DocuSign-Authentication header) that are set in Configuration object
             // for testing purposes, we have to connect using a different host than we do for authentication and other monitor tests
-            ApiClient userInfoApiClient = new ApiClient(testConfig.UserInfoHost);
+            DocuSignClient userInfoApiClient = new DocuSignClient(testConfig.UserInfoHost);
+            userInfoApiClient.SetOAuthBasePath(testConfig.OAuthBasePath);
             OAuth.UserInfo userInfo = userInfoApiClient.GetUserInfo(tokenInfo.access_token);
 
             Assert.IsNotNull(userInfo);

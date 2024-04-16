@@ -11,7 +11,7 @@ namespace SdkTests
 
         public string UserInfoHost { get; set; }
 
-        public ApiClient ApiClient { get; set; }
+        public DocuSignClient ApiClient { get; set; }
 
         public string AccountId { get; set; }
 
@@ -35,7 +35,7 @@ namespace SdkTests
             string integratorKeyFromEnv = Environment.GetEnvironmentVariable("integratorkey");
 
             this.Host = host ?? "https://lens-d.docusign.net";
-            this.UserInfoHost = userInfoHost ?? "https://demo.docusign.net";
+            this.UserInfoHost = userInfoHost ?? "https://lens-d.docusign.net";
             this.IntegratorKey = (integratorKey != null) ? integratorKey : integratorKeyFromEnv;
 
             this.RecipientEmail = (recipientEmail != null) ? recipientEmail : "docusignsdktest@mailinator.com";
