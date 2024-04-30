@@ -1,3 +1,6 @@
+## [v2.0.0-rc2] - Monitor API v2.0-2.0.0 - 2024-04-29
+### Breaking Changes
+- Updated from System.IdentityModel.Tokens.Jwt to Microsoft.IdentityModel.JsonWebTokens for token handling.
 ## [v2.0.0-rc1] - Monitor API v2.0-2.0.0 - 2024-04-05
 ### Breaking Changes
 - Updated C# SDK dependencies.
