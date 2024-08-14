@@ -1,3 +1,8 @@
+## [v2.0.0] - Monitor API v2.0-2.0.0 - 2024-07-30
+### Changed
+- Added support for version v2.0-2.0.0 of the DocuSign Monitor API.
+- Updated the SDK release version.
+
 ## [v2.0.0-rc3] - Monitor API v2.0-2.0.0 - 2024-05-20
 ### Changed
 - Updated C# SDK dependencies.
