@@ -1,3 +1,10 @@
+## [v2.0.1] - Monitor API v2.0-2.0.0 - 2024-11-07
+### Changed
+- Fixed Deadlock issue with UI Apps (E.g. WinForms).
+- Fixed deserialization issue of text/csv type response
+- Removed the staging base path and OAuth path constant.
+- Updated the SDK release version.
+
 ## [v2.0.0] - Monitor API v2.0-2.0.0 - 2024-07-30
 ### Changed
 - Added support for version v2.0-2.0.0 of the DocuSign Monitor API.
