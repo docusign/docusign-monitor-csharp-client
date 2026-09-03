@@ -7,7 +7,7 @@
     <Description>The Docusign NuGet package makes integrating Docusign into your apps and websites a super fast and painless process. The library is open sourced on GitHub, look for the docusign-monitor-csharp-client repository.</Description>
     <Company>DocuSign Inc.</Company>
     <Owners>DocuSign</Owners>
-    <Copyright>Copyright © Docusign 2024</Copyright>
+    <Copyright>Copyright © Docusign 2026</Copyright>
     <AssemblyTitle>DocuSign.Monitor</AssemblyTitle>
     <Authors>DocuSign</Authors>
     <OutputType>Library</OutputType>
@@ -16,7 +16,7 @@
     <RootNamespace>DocuSign.Monitor</RootNamespace>
     <AssemblyName>DocuSign.Monitor</AssemblyName>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <VersionPrefix>2.0.2</VersionPrefix>
+    <VersionPrefix>3.0.0</VersionPrefix>
     <VersionSuffix/>
     <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -26,7 +26,7 @@
     <PackageLicenseUrl>https://github.com/docusign/docusign-monitor-csharp-client/blob/master/LICENSE</PackageLicenseUrl>
     <RepositoryUrl>https://github.com/docusign/docusign-monitor-csharp-client</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageReleaseNotes>[v2.0.2] - Monitor API v2.0-2.0.0 - 11/15/2024</PackageReleaseNotes>
+    <PackageReleaseNotes>[v3.0.0] - Monitor API v2.0-3.0.1 - 7/28/2026</PackageReleaseNotes>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(TargetFramework)' == 'net462'">
     <DefineConstants>NET462</DefineConstants>

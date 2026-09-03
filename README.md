@@ -32,8 +32,8 @@ This client SDK is provided as open source, which enables you to customize its f
 
 <a id="versionInformation"></a>
 ### Version Information
-- **API version**: v2.0
-- **Latest SDK version (Including prerelease)**: 2.0.2
+- **API version**: v3.0
+- **Latest SDK version (Including prerelease)**: 3.0.0
 
 <a id="requirements"></a>
 ### Requirements
