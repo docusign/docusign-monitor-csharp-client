@@ -46,22 +46,37 @@ namespace SdkNetCoreTests
                 if (item.IsDefault == "true")
                 {
                     testConfig.AccountId = item.AccountId;
+                    testConfig.OrganizationId = item.Organization?.OrganizationId;
                     //testConfig.ApiClient.SetBasePath(item.BaseUri + "/restapi");
                     break;
                 }
             }
 
             Assert.IsNotNull(testConfig.AccountId);
+            Assert.IsNotNull(testConfig.OrganizationId);
         }
 
         [TestMethod]
         public void JwtGetStreamTest()
         {
-            DataSetApi dataSetApi = new DataSetApi(testConfig.ApiClient);
-            String dataSetName = "monitor";
-            String version = "2.0";
-            CursoredResult cursoredResult = dataSetApi.GetStream(version, dataSetName);
-            Assert.IsNotNull(cursoredResult);
+            DocuMonitorApi docuMonitorApi = new DocuMonitorApi(testConfig.ApiClient);
+            Guid organizationId = Guid.Parse(testConfig.OrganizationId);
+            DocuMonitorApi.StreamOptions options = new DocuMonitorApi.StreamOptions
+            {
+                cursor = DateTime.UtcNow.AddDays(-1).ToString("yyyy-MM-ddTHH:mm:ssZ"),
+                limit = 100
+            };
+
+            StreamResponse streamResponse = docuMonitorApi.Stream(organizationId, options);
+
+            Assert.IsNotNull(streamResponse);
+            Assert.IsNotNull(streamResponse.EndCursor);
+            Assert.IsNotNull(streamResponse.ResultData);
+
+            if (streamResponse.ResultData.Count > 0)
+            {
+                Assert.IsNotNull(streamResponse.ResultData[0].EventId);
+            }
         }
     }
 }

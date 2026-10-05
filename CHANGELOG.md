@@ -1,3 +1,8 @@
+## [v3.0.0] - Monitor API v2.0-3.0.1 - 2026-07-29
+### Changed
+- Added support for version v2.0-3.0.1 of the DocuSign Monitor API.
+- Updated the SDK release version.
+
 ## [v2.0.2] - Monitor API v2.0-2.0.0 - 2024-11-15
 ### Changed
 - Resolved an issue that prevented the use of `RequestJWTApplicationToken` with a production account URL.
